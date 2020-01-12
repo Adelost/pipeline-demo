@@ -6,6 +6,8 @@ pipeline {
         stage('Build 1') {
           steps {
             echo 'Building 1'
+            sh '''npm install
+npm run build'''
           }
         }
 
@@ -19,8 +21,19 @@ pipeline {
     }
 
     stage('Test') {
-      steps {
-        echo 'Building'
+      parallel {
+        stage('Test') {
+          steps {
+            echo 'Building'
+          }
+        }
+
+        stage('') {
+          steps {
+            sh 'npm run test'
+          }
+        }
+
       }
     }
 
