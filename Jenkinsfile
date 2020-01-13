@@ -28,7 +28,7 @@ npm run build'''
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
             sh 'npm run test'
           }
