@@ -28,7 +28,7 @@ npm run build'''
           }
         }
 
-        stage('error') {
+        stage('Jest') {
           steps {
             sh 'npm run test'
           }
