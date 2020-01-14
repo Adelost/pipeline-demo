@@ -10,4 +10,9 @@ describe('calculate', function() {
     let result = Calculator.Difference(5, 2);
     expect(result).toBe(3);
   });
+  
+    it('substract fail', function() {
+    let result = Calculator.Difference(5, 2);
+    expect(result).toBe(5);
+  });
 });
