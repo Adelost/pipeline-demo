@@ -6,8 +6,11 @@ pipeline {
         stage('Build 1') {
           steps {
             echo 'Building 1'
-            sh '''npm install && \\
-npm run build'''
+            sh '''npm install
+
+# npm run build
+
+echo bar >> bar.txt'''
           }
         }
 
@@ -46,6 +49,7 @@ npm run build'''
     stage('Deploy') {
       steps {
         echo 'Deploying'
+        sh 'cat bar.txt'
       }
     }
 
