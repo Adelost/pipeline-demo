@@ -7,9 +7,7 @@ pipeline {
           steps {
             echo 'Building 1'
             sh '''npm install
-
-# npm run build
-
+npm run build
 echo bar >> bar.txt'''
           }
         }
